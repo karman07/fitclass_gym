@@ -40,18 +40,18 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 transition-colors duration-300">
       {/* Header */}
       <header className="fixed top-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-blue-200 dark:border-gray-700 z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-2 rounded-lg">
-              <Dumbbell className="h-6 w-6 text-white" />
+        <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4 flex justify-between items-center">
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-1.5 sm:p-2 rounded-lg">
+              <Dumbbell className="h-5 sm:h-6 w-5 sm:w-6 text-white" />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">Fitclass</span>
+            <span className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">Fitclass</span>
           </div>
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setDarkMode(!darkMode)}
-            className="text-blue-600 hover:bg-blue-100 dark:text-blue-300 dark:hover:bg-gray-800"
+            className="text-blue-600 hover:bg-blue-100 dark:text-blue-300 dark:hover:bg-gray-800 p-2"
           >
             {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
@@ -59,13 +59,13 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-20 px-4 relative overflow-hidden">
+      <section className="pt-20 sm:pt-24 pb-16 sm:pb-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-blue-900/10 dark:bg-blue-800/10"></div>
-        <div className="container mx-auto text-center relative z-10">
-          <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-gray-800 rounded-full text-blue-800 dark:text-blue-300 text-sm font-medium mb-6">
+        <div className="container mx-auto text-center relative z-10 max-w-6xl">
+          <div className="inline-block px-3 sm:px-4 py-2 bg-blue-100 dark:bg-gray-800 rounded-full text-blue-800 dark:text-blue-300 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
             #FitByChoice - Premium Fitness Club
           </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-800 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-800 bg-clip-text text-transparent leading-tight px-2">
             <Typewriter
               options={{
                 strings: ['Transform Your Life at Fitclass', 'Premium Fitness Club', '#FitByChoice'],
@@ -78,20 +78,20 @@ function App() {
               }}
             />
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2">
             Experience premium fitness at Gurugram's most advanced 24×7 facility with 80+ workout stations, wellness amenities, and personalized training.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-8 px-4">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               onClick={() => document.getElementById('join-form')?.scrollIntoView({behavior: 'smooth'})}
             >
               Join Fitclass Today
             </Button>
             <div className="flex items-center space-x-2 text-slate-600 dark:text-gray-300">
-              <Clock className="h-5 w-5 text-blue-600" />
-              <span className="font-medium">Open 24×7</span>
+              <Clock className="h-4 sm:h-5 w-4 sm:w-5 text-blue-600" />
+              <span className="font-medium text-sm sm:text-base">Open 24×7</span>
             </div>
           </div>
         </div>
@@ -161,21 +161,25 @@ function App() {
       </section>
 
       {/* Join Form Section */}
-      <section id="join-form" className="py-20 px-4 bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <div className="bg-gradient-to-r from-indigo-600 to-blue-600 p-4 rounded-full w-fit mx-auto mb-6">
-              <Dumbbell className="h-10 w-10 text-white" />
+      <section id="join-form" className="py-12 sm:py-16 lg:py-20 px-3 sm:px-4 bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+            <div className="bg-gradient-to-r from-indigo-600 to-blue-600 p-3 sm:p-4 rounded-full w-fit mx-auto mb-4 sm:mb-6">
+              <Dumbbell className="h-6 sm:h-8 lg:h-10 w-6 sm:w-8 lg:w-10 text-white" />
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-700 to-blue-700 dark:from-indigo-400 dark:to-blue-400 bg-clip-text text-transparent">Join Fitclass Today!</h2>
-            <p className="text-lg text-slate-600 dark:text-gray-300">Fill your details and spin the wheel for exclusive membership discounts</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-indigo-700 to-blue-700 dark:from-indigo-400 dark:to-blue-400 bg-clip-text text-transparent px-2">
+              Join Fitclass Today!
+            </h2>
+            <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-gray-300 px-4">
+              Fill your details and spin the wheel for exclusive membership discounts
+            </p>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-2xl border border-indigo-200 dark:border-gray-600">
-            <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 xl:p-10 shadow-xl border border-indigo-200 dark:border-gray-600">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4 lg:gap-6">
               <input
                 type="text"
                 placeholder="Full Name"
-                className="p-4 border border-indigo-200 dark:border-gray-600 rounded-xl bg-indigo-50/50 dark:bg-gray-700 text-slate-800 dark:text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-400 transition-all"
+                className="w-full px-3 sm:px-4 py-3 sm:py-4 border border-indigo-200 dark:border-gray-600 rounded-lg sm:rounded-xl bg-indigo-50/50 dark:bg-gray-700 text-slate-800 dark:text-white placeholder:text-slate-500 dark:placeholder:text-gray-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 dark:focus:ring-indigo-400 transition-all text-sm sm:text-base"
                 value={formData.name}
                 onChange={(e) => setFormData({...formData, name: e.target.value})}
                 required
@@ -183,7 +187,7 @@ function App() {
               <input
                 type="email"
                 placeholder="Email Address"
-                className="p-4 border border-indigo-200 dark:border-gray-600 rounded-xl bg-indigo-50/50 dark:bg-gray-700 text-slate-800 dark:text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-400 transition-all"
+                className="w-full px-3 sm:px-4 py-3 sm:py-4 border border-indigo-200 dark:border-gray-600 rounded-lg sm:rounded-xl bg-indigo-50/50 dark:bg-gray-700 text-slate-800 dark:text-white placeholder:text-slate-500 dark:placeholder:text-gray-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 dark:focus:ring-indigo-400 transition-all text-sm sm:text-base"
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
                 required
@@ -191,7 +195,7 @@ function App() {
               <input
                 type="tel"
                 placeholder="Phone Number"
-                className="p-4 border border-indigo-200 dark:border-gray-600 rounded-xl bg-indigo-50/50 dark:bg-gray-700 text-slate-800 dark:text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-400 transition-all"
+                className="w-full px-3 sm:px-4 py-3 sm:py-4 border border-indigo-200 dark:border-gray-600 rounded-lg sm:rounded-xl bg-indigo-50/50 dark:bg-gray-700 text-slate-800 dark:text-white placeholder:text-slate-500 dark:placeholder:text-gray-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 dark:focus:ring-indigo-400 transition-all text-sm sm:text-base"
                 value={formData.phone}
                 onChange={(e) => setFormData({...formData, phone: e.target.value})}
                 required
@@ -199,14 +203,14 @@ function App() {
               <input
                 type="number"
                 placeholder="Age"
-                className="p-4 border border-indigo-200 dark:border-gray-600 rounded-xl bg-indigo-50/50 dark:bg-gray-700 text-slate-800 dark:text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-400 transition-all"
+                className="w-full px-3 sm:px-4 py-3 sm:py-4 border border-indigo-200 dark:border-gray-600 rounded-lg sm:rounded-xl bg-indigo-50/50 dark:bg-gray-700 text-slate-800 dark:text-white placeholder:text-slate-500 dark:placeholder:text-gray-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 dark:focus:ring-indigo-400 transition-all text-sm sm:text-base"
                 value={formData.age}
                 onChange={(e) => setFormData({...formData, age: e.target.value})}
                 required
               />
-              <div className="md:col-span-2 text-center pt-4">
-                <Button type="submit" className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white px-12 py-4 text-lg font-semibold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
-                  🎯 Spin the Lucky Wheel!
+              <div className="sm:col-span-2 text-center pt-2 sm:pt-4">
+                <Button type="submit" className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white px-6 sm:px-8 lg:px-12 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold rounded-lg sm:rounded-xl transition-all duration-300 shadow-lg">
+                  Spin the Lucky Wheel!
                 </Button>
               </div>
             </form>
